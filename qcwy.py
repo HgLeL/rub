@@ -1,3 +1,6 @@
+"""
+获取前程无忧的数据分析师招聘页面的公司名称、公司招聘url、月薪、工作地点
+"""
 def extra_n_pages(n):
     import re,requests,time
     t=time.time()
