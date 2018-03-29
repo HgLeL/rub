@@ -64,3 +64,8 @@ tf.cast(x,dtype,name=None) 将x的数据格式转换成dtype类型
 tf.round(x)    舍入最近的整数
 np.nan_to_num（x, copy=True)    将x中的NAN转换成0，inf转换成很大的数字，并代替之
 """
+
+"""
+lasso回归，岭回归，逻辑回归，线性回归，多元线性回归，戴明回归（total regression,与最小二乘回归最小化的距离不同），弹性网络回归，
+这些处理的步骤均类似，区别在于损失函数的不同
+"""
