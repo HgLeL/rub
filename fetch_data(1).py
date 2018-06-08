@@ -157,3 +157,21 @@ for i in range(5):
 
 
 
+    
+    
+    for i in range(len(nameOfChain)):
+    setOfData = dataOfMonth[dataOfMonth['chain_name'] == nameOfChain[i]]
+    plotData = pd.merge(plotData[['date_range']], setOfData[['bill_time_year_month', 'bill_amount']],left_on='date_range',
+                        right_on='bill_time_year_month', how='left')
+    plotData = plotData[['date_range', 'bill_amount']].fillna(0)
+    x = plotData.date_range  # x是付款日期
+    y = plotData.bill_amount  # y是当月订单金额和
+    fig = plt.figure(figsize=(1, 1))
+    fig.subplots_adjust(bottom=0.01, top=1, right=0.99, left=0.0005)  # 只留取方框内的条形图
+    plt.xticks([])  # 不显示x轴的刻度
+    plt.yticks([])
+    plt.axis('off')
+    plt.bar(left=x, height=y)
+    plt.savefig('/home/iqx/文档/项目/订单时序图/%d.png' % i, pad_inches=0)  # 保存图片到文件夹
+    plt.clf()
+    plt.close()
