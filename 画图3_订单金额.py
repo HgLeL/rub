@@ -5,10 +5,10 @@ import re
 import numpy as np
 
 db = pymysql.connect(
-    host='offlinecentre.cigru3mivzpd.rds.cn-north-1.amazonaws.com.cn',   # 连接你要取出数据库的ip，如果是本机可以不用写
+    host='**',   # 连接你要取出数据库的ip，如果是本机可以不用写
     port = 3306,
-    user='t7',     # 你的数据库用户名
-    passwd='t7@DCFOffLine#9387%',# 你的数据库密码
+    user='**',     # 你的数据库用户名
+    passwd='**',# 你的数据库密码
     db ='t7',
     charset='utf8',)
 # 使用cursor()方法获取操作游标
