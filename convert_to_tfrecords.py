@@ -8,7 +8,7 @@ from os import  walk
 from os.path import join
 
 #图片存放位置
-DATA_DIR = '/home/iqx/文档/项目/订单时序图_建模(复件)/train'
+DATA_DIR = './train'
 
 #图片信息
 IMG_HEIGHT = 100
@@ -23,7 +23,7 @@ def read_images(path):
     num_files = len(filenames)
     images = np.zeros((num_files,IMG_HEIGHT,IMG_WIDTH,IMG_CHANNELS),dtype=np.uint8)
     labels = np.zeros((num_files, ), dtype=np.uint8)
-    f = open('/home/iqx/文档/项目/订单时序图_建模(复件)/label.txt')
+    f = open('./label.txt')
     lines = f.readlines()
     # 遍历所有的图片和label，将图片resize到[100,100,3]
     for i,filename in enumerate(filenames):
