@@ -19,8 +19,8 @@ learning_rate = 0.1
 lr_decay = 0.9
 num_gens_to_wait = 250.
 
-TRAIN_FILE = '/home/iqx/PycharmProjects/project/项目/train.tfrecords'
-TEST_FILE = '/home/iqx/PycharmProjects/project/项目/test.tfrecords'
+TRAIN_FILE = './train.tfrecords'
+TEST_FILE = './test.tfrecords'
 
 # 批量读取图片
 def read_and_decode(filename_queue):
