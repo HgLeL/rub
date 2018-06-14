@@ -8,10 +8,10 @@ import hashlib
 from PIL import Image
 
 db = pymysql.connect(
-    host='offlinecentre.cigru3mivzpd.rds.cn-north-1.amazonaws.com.cn',   # 连接你要取出数据库的ip，如果是本机可以不用写
+    host='*',   # 连接你要取出数据库的ip，如果是本机可以不用写
     port = 3306,
-    user='t7',     # 你的数据库用户名
-    passwd='t7@DCFOffLine#9387%',# 你的数据库密码
+    user='*',     # 你的数据库用户名
+    passwd='*',# 你的数据库密码
     db ='t7',
     charset='utf8',)
 
@@ -76,7 +76,7 @@ for i in range(len(nameOfChain)):
     plt.axis('off') # 不显示坐标轴
     fig.subplots_adjust(bottom=0.005, top=1, right=0.999, left=0.0005)
     plt.bar(left=x, height=y,width=1)
-    plt.savefig('/home/iqx/文档/项目/订单时序图_建模2/%d.jpg' % i, pad_inches=0)  # 保存图片到文件夹
+    plt.savefig('./%d.jpg' % i, pad_inches=0)  # 保存图片到文件夹
     plt.clf()
     plt.close()
 
@@ -91,14 +91,14 @@ for i in range(len(nameOfChain)):
     plt.xticks(np.array([0,6,12,18,24,(len(x)-1)]))
     plt.title(r'%s' % nameOfChain[i])
     plt.bar(left=x, height=y)
-    plt.savefig('/home/iqx/文档/项目/订单时序图2/%d.png' % i)  # 保存图片到文件夹
+    plt.savefig('./%d.png' % i)  # 保存图片到文件夹
     plt.clf()
     plt.close()
 
 # 将链属名称(密文)和对应的图片号码保存为csv文件
 df = pd.DataFrame(nameOfChain)
 df['image_number'] = pd.DataFrame(np.arange(0,len(nameOfChain),1))
-df.to_csv('/home/iqx/文档/项目/chain_name.csv', index=None, encoding='gbk')
+df.to_csv('./chain_name.csv', index=None, encoding='gbk')
 
 
 
