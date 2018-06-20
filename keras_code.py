@@ -33,7 +33,7 @@ import keras
 from keras.utils import plot_model    # 此模块用于模型可视化
 
 # 导入数据，对多分类标签one hot编码，建立模型
-data, label = load_data(img_path='/home/iqx/文档/项目/cnn_6.16_640x480/',label_path='/home/iqx/文档/项目/label2.txt')
+data, label = load_data(img_path='***',label_path='***.txt')
 label = keras.utils.to_categorical(label, num_classes=3)
 model = Sequential()
 
@@ -74,4 +74,4 @@ data /= 255      # 归一化
 model.fit(data, label, batch_size=64, epochs=100, verbose=1, shuffle=True)
 score = model.evaluate(data, label, verbose=1, steps=10)
 # 模型可视化
-plot_model(model, to_file='/home/iqx/文档/项目/model.jpg')
+plot_model(model, to_file='***/model.jpg')
