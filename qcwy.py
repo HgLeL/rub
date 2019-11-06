@@ -10,6 +10,7 @@ def extra_n_pages(n):
             '.html?lang=c&stype=1&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare='
         r = requests.get(url)
         r.encoding = 'GBK'
+        # 正则表达式中的re.S的作用见链接https://blog.csdn.net/weixin_42781180/article/details/81302806
         place.append(re.findall(r'<span\sclass="t3">(.*?)</span>',r.text,re.S)[2:])
         salary.append(re.findall(r'<span\sclass="t4">(.*?)</span>',r.text,re.S)[2:])
         website_company.append(re.findall(r'<span\sclass="t2"><a\starget="_blank"\stitle=".*?"\s'
